@@ -1,0 +1,167 @@
+/* AAPKE LOG - Redesigned Civic-Tech Color Theme */
+/* Palette: Civic Blue + Teal + Community Green */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Primary Brand & Accents */
+  --primary-hero: #173F5F;
+  --primary-hover: #1F547D;
+  --teal-accent: #147D86;
+  --teal-hover: #116870;
+  --soft-teal: #53B7B3;
+
+  /* Ecosystem Role Colors */
+  --bmc-blue: #1769AA;
+  --university-green: #2E7D5B;
+  --industry-amber: #B7791F;
+  --society-slate: #5B6675;
+  --citizen-teal: #3B7C82;
+  --admin-deep-blue: #173F5F;
+
+  /* Surfaces & Neutrals */
+  --bg-color: #F7F9F8;
+  --surface: #FFFFFF;
+  --text-primary: #17212B;
+  --text-secondary: #667085;
+  --border-color: #DDE4E8;
+
+  /* Severity Threat Colors */
+  --threat-high: #C62828;
+  --threat-medium: #B7791F;
+  --threat-low: #2E7D5B;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Cards & Surfaces */
+.civic-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.civic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -8px rgba(23, 63, 95, 0.12);
+  border-color: #CAD5DD;
+}
+
+/* Threat Level Badges - Strictly HIGH / MEDIUM / LOW */
+.badge-threat-high {
+  background-color: rgba(198, 40, 40, 0.08);
+  color: #C62828;
+  border: 1px solid rgba(198, 40, 40, 0.28);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.badge-threat-medium {
+  background-color: rgba(183, 121, 31, 0.08);
+  color: #B7791F;
+  border: 1px solid rgba(183, 121, 31, 0.28);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.badge-threat-low {
+  background-color: rgba(46, 125, 91, 0.08);
+  color: #2E7D5B;
+  border: 1px solid rgba(46, 125, 91, 0.28);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Verification Badges */
+.badge-verified {
+  background-color: var(--university-green);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Primary Button Styles */
+.btn-primary {
+  background-color: var(--primary-hero);
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--primary-hero);
+  border: 1px solid var(--primary-hero);
+  transition: all 0.15s ease;
+}
+.btn-secondary:hover {
+  background-color: #F0F4F7;
+}
+
+.btn-ai-teal {
+  background-color: var(--teal-accent);
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+.btn-ai-teal:hover {
+  background-color: var(--teal-hover);
+}
+
+/* 10-Stage Stepper */
+.stepper-line {
+  height: 3px;
+  background: var(--border-color);
+}
+.stepper-line.active {
+  background: var(--primary-hero);
+}
+
+/* Pulse animation for active SLA escalation */
+@keyframes pulse-urgent {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.88; transform: scale(1.015); }
+}
+
+.urgent-pulse {
+  animation: pulse-urgent 2s infinite ease-in-out;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Official vs Simulation Banners - Deep Civic Blue and Restrained Tones */
+.official-ref-banner {
+  background-color: var(--primary-hero);
+  color: #ffffff;
+  border: 1px solid #1E4E75;
+}
+
+.simulation-banner {
+  background-color: #1A466A;
+  color: #ffffff;
+  border: 1px solid var(--teal-accent);
+}
